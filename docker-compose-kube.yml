@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  api:
+    image: larrysuto/reactflask_app_api 
+    expose:
+      - "5000"
+  client:
+    depends_on:
+      - api
+    image: larrysuto/reactflask_app_client 
+    ports:
+      - "80:80"

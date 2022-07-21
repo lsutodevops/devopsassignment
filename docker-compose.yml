@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: acrdpoc.azurecr.io/react_app_flask
+    expose:
+      - "5000"
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    depends_on:
+      - api
+    image: acrdpoc.azurecr.io/react_app_flask_client
+    ports:
+      - "80:80"
