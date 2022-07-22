@@ -22,7 +22,7 @@ Its deployed here: http://52.149.62.224:80
 To upload images to the Azure Container Registry, update the image property in the Docker Compose service section as follows: Prefix the image name with the login server name of your Azure Container Registry(acr) "'acrName'.azurecr.io"
 In this deployment its named like this: (from the docker-compose.yml: acrdpoc.azurecr.io/react_app_flask)
 
-Currently it is uncertain how to set the public ip to static so that it will change whenever the app is redeployed.
+Currently it is uncertain how to set the public ip to static so that it will will remain the same whenever the app is redeployed.
 It does run in a specific ACI container group which is generated dynamically. Once deployed and if you are attached to the docker aci context, you can get the 
 public ip of the client container with `docker ps`. 
 
